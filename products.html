@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="app.js" defer></script>
+  <script src="products.js" type="module" defer></script>
+  <script src="cart.js" type="module" defer></script>
+</head>
+<body>
+  
+  <nav id="sidebar">
+    <ul>
+      <li>
+        <span class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" width="50px" alt="Logo">
+          </a>
+          <h5>
+            Mommy Yoona's Pet Supplies
+            <br>
+             & Accessories
+          </h5>
+        </span>
+      </li>
+      <li>
+        <a href="index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"/></svg>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="products.html">
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+          </svg>
+          <span>Products</span>
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+            <path d="M424-320q0-81 14.5-116.5T500-514q41-36 62.5-62.5T584-637q0-41-27.5-68T480-732q-51 0-77.5 31T365-638l-103-44q21-64 77-111t141-47q105 0 161.5 58.5T698-641q0 50-21.5 85.5T609-475q-49 47-59.5 71.5T539-320H424Zm56 240q-33 0-56.5-23.5T400-160q0-33 23.5-56.5T480-240q33 0 56.5 23.5T560-160q0 33-23.5 56.5T480-80Z"/>
+          </svg>
+          <span>About Us</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Zm80 0h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/>
+          </svg>
+          <span>Contact Us</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <div class="container2">
+      <header>
+          <div class="title">
+              <a href="/">Products</a>
+          </div>
+          <div class="icon-cart">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+            </svg>    
+              <span>0</span>
+          </div>
+      </header>
+
+    
+
+    <div id="contentTab">
+      <div class="products">
+        <div class="filter-buttons">
+          <button onclick="filterProducts('cat')">Cat Food</button>
+          <button onclick="filterProducts('dog')">Dog Food</button>
+          <button onclick="filterProducts('bird')">Bird Food</button>
+          <button onclick="filterProducts('other')">Other Items</button>
+          <button onclick="filterProducts('all')">All Items</button>
+        </div>
+        <!-- Product 1 -->
+        <div class="product-card dog">
+          <div class="product-image">
+            <img src="images/1.jpg" alt="Special Dog Lamb & Rice for Adult">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Special Dog Lamb & Rice for Adult 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱140.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="1" data-name="Special Dog Lamb & Rice for Adult 1Kg" data-price="140.00" data-image="images/1.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>Hypo-allergenic & Low Cholesterol Formula</li>
+              <li>High quality ingredients</li>
+              <li>No dyes & preservatives</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card dog">
+          <div class="product-image">
+            <img src="images/2.jpg" alt="Special Dog Lamb & Rice for Puppy 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Special Dog Lamb & Rice for Puppy 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱145.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="2" data-name="Special Dog Lamb & Rice for Puppy 1Kg" data-price="145.00" data-image="images/2.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>Hypo-Allergenic</li>
+              <li>High quality ingredients</li>
+              <li>No dyes & preservatives</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card dog">
+          <div class="product-image">
+            <img src="images/3.png" alt="Topbreed Puppy Dog Meal 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Topbreed Puppy Dog Meal 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱105.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="3" data-name="Topbreed Puppy Dog Meal 1Kg" data-price="105.00" data-image="images/3.png">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>High quality ingridients</li>
+              <li>Supports a shiny coat</li>
+              <li>Good choice for puppies</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card dog">
+          <div class="product-image">
+            <img src="images/4.JPG" alt="Topbreed Adult Dog Meal 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Topbreed Adult Dog Meal 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱90.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="4" data-name="Topbreed Adult Dog Meal 1Kg" data-price="90.00" data-image="images/4.JPG">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>High quality ingridients</li>
+              <li>Supports a shiny coat</li>
+              <li>Good choice for puppies</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card dog">
+          <div class="product-image">
+            <img src="images/5.JPG" alt="Holistic Recipe Puppy and Pregnant Lamb Meal and Rice Dry Dog Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Holistic Recipe Puppy and Pregnant Lamb Meal and Rice Dry Dog Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱200.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="5" data-name="Holistic Recipe Puppy and Pregnant Lamb Meal and Rice Dry Dog Food 1Kg" data-price="200.00" data-image="images/5.JPG">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>High quality ingridients</li>
+              <li>Hypoallergenic</li>
+              <li>No dyes & preservatives</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card dog">
+          <div class="product-image">
+            <img src="images/6.JPG" alt="Holistic Recipe Lamb & Rice Adult 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Holistic Recipe Lamb & Rice Adult 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱195.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="6" data-name="Holistic Recipe Lamb & Rice Adult 1Kg" data-price="195.00" data-image="images/6.JPG">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>High quality ingridients</li>
+              <li>High digestibility</li>
+              <li>1 to 6 years of age</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card dog">
+          <div class="product-image">
+            <img src="images/7.JPG" alt="Pedigree Adult Chicken and Vegetables Dry Dog Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Pedigree Adult Chicken and Vegetables Dry Dog Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱150.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="7" data-name="Pedigree Adult Chicken and Vegetables Dry Dog Food 1Kg" data-price="150.00" data-image="images/7.JPG">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>Supports a shinier coat</li>
+              <li>Dietary Fiber</li>
+              <li>1+ years</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card dog">
+          <div class="product-image">
+            <img src="images/8.JPG" alt="Pedigree Adult Mini Chicken Liver and Vegetables Dry Dog Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Pedigree Adult Mini Chicken Liver and Vegetables Dry Dog Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱150.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="8" data-name="Pedigree Puppy Chicken and Egg with Milk Dry Dog Food 1Kg" data-price="150.00" data-image="images/8.JPG">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>High quality ingridients</li>
+              <li>Supports a shiny coat</li>
+              <li>9+ months</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card dog">
+          <div class="product-image">
+            <img src="images/9.JPG" alt="Pedigree Puppy Chicken and Egg with Milk Dry Dog Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Pedigree Adult Mini Chicken Liver and Vegetables Dry Dog Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱180.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="9" data-name="Pedigree Puppy Chicken and Egg with Milk Dry Dog Food 1Kg" data-price="180.00" data-image="images/9.JPG">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>High quality ingridients</li>
+              <li>Supports a shiny coat</li>
+              <li>3-18 months</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card cat">
+          <div class="product-image">
+            <img src="images/10.JPG" alt="Cuties Catz Seafood Flavor Cat Dry Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Cuties Catz Seafood Flavor Cat Dry Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱135.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="10" data-name="Cuties Catz Seafood Flavor Cat Dry Food 1Kg" data-price="135.00" data-image="images/10.JPG">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>High quality ingridients</li>
+              <li>Immune system</li>
+              <li>Healthy vision</li>
+            </ul>
+          </div>
+        </div>
+        <div class="product-card cat">
+          <div class="product-image">
+            <img src="images/11.jpg" alt="Cuties Catz Tuna & Shrimp Flavor Cat Dry Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Cuties Catz Tuna & Shrimp Flavor Cat Dry Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱125.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="11" data-name="Cuties Catz Tuna & Shrimp Flavor Cat Dry Food 1Kg" data-price="125.00" data-image="images/11.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>High quality ingredients</li>
+              <li>Immune System</li>
+              <li>Healthy Vision</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card cat">
+          <div class="product-image">
+            <img src="images/12.jpg" alt="Aozi Tuna Flavor Kitten Dry Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Aozi Tuna Flavor Kitten Dry Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱200.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="12" data-name="Aozi Tuna Flavor Kitten Dry Food 1Kg" data-price="200.00" data-image="images/12.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>Kitten food safe</li>
+              <li>Pure natural organic food</li>
+              <li>Healthy skin & Bright Hair</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card cat">
+          <div class="product-image">
+            <img src="images/13.jpg" alt="Aozi Salmon Flavor Kitten Dry Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Aozi Salmon Flavor Kitten Dry Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱200.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="13" data-name="Aozi Salmon Flavor Kitten Dry Food 1Kg" data-price="200.00" data-image="images/13.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>Kitten food safe</li>
+              <li>Pure natural organic food</li>
+              <li>Healthy skin & Bright Hair</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card cat">
+          <div class="product-image">
+            <img src="images/14.jpg" alt="Aozi Salmon Flavor Cat Dry Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Aozi Salmon Flavor Cat Dry Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱200.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="14" data-name="Aozi Salmon Flavor Cat Dry Food 1Kg" data-price="200.00" data-image="images/14.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>Adult Cats</li>
+              <li>Less Salt</li>
+              <li>Low-allergic</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card cat">
+          <div class="product-image">
+            <img src="images/15.jpg" alt="Special Cat Chicken & Turkey Flavor Cat Dry Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Special Cat Chicken & Turkey Flavor Cat Dry Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱160.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="15" data-name="Special Cat Chicken & Turkey Flavor Cat Dry Food 1Kg" data-price="160.00" data-image="images/15.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>For Cats of All Breeds and Life Stages</li>
+              <li>Easy to Digest</li>
+              <li>Supports a Shiny Coat</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card cat">
+          <div class="product-image">
+            <img src="images/16.jpg" alt="Special Cat Urinary Care Cat Dry Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Special Cat Urinary Care Cat Dry Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱195.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="16" data-name="Special Cat Urinary Care Cat Dry Food 1Kg" data-price="195.00" data-image="images/16.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>Support Healthy Urinary Tract</li>
+              <li>Reduces Likelihood of Feline Urinary Tract Disease</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card cat">
+          <div class="product-image">
+            <img src="images/17.jpg" alt="Whiskas Kitten Ocean Fish Flavor Cat Dry Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Whiskas Kitten Ocean Fish Flavor Cat Dry Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱190.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="17" data-name="Whiskas Kitten Ocean Fish Flavor Cat Dry Food 1Kg" data-price="190.00" data-image="images/17.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>2-12 Month Old Kittens</li>
+              <li>Healthy Eyesight</li>
+              <li>High Quality Ingredients</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card cat">
+          <div class="product-image">
+            <img src="images/18.jpg" alt="Whiskas Tuna Flavor Dry Cat Food Cat Dry Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>Whiskas Tuna Flavor Dry Cat Food Cat Dry Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱180.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="18" data-name="Whiskas Tuna Flavor Dry Cat Food Cat Dry Food 1Kg" data-price="180.00" data-image="images/18.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>High Quality Ingredients</li>
+              <li>Healthy Eyesight</li>
+              <li>Healthy and Shiny Coat</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card bird">
+          <div class="product-image">
+            <img src="images/19.jpg" alt="B-Meg Integra 1000 Bird Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>B-Meg Integra 1000 Bird Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱45.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="19" data-name="B-Meg Integra 1000 Bird Food 1Kg" data-price="45.00" data-image="images/19.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>Optimum and balanced nutrition for chicks</li>
+              <li>Shields against harmful pathogens</li>
+              <li>Environmental stress protection</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card bird">
+          <div class="product-image">
+            <img src="images/20.jpg" alt="B-Meg Integra 3000 Bird Food 1Kg">
+          </div>
+          <div class="product-details">
+            <span class="product-title">
+              <h3>B-Meg Integra 3000 Bird Food 1Kg</h3>
+            </span>
+            <span class="product-info">
+              <p>₱40.00</p>
+              <button class="details-btn">Details</button>
+              <button class="add-to-cart-btn" data-id="20" data-name="B-Meg Integra 3000 Bird Food 1Kg" data-price="40.00" data-image="images/20.jpg">Add to Cart</button>
+            </span>
+            <ul class="product-details-list hidden">
+              <li>Proper Growth</li>
+              <li>Immuno Boosters</li>
+              <li>Probiotics and Organic Selenium</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="cartTab">
+    <h1>Shopping Cart</h1>
+    <div class="listCart"></div>
+    <div class="total-price">Total Price: ₱0.00</div> <!-- Total price element -->
+    <div class="btn">
+      <button class="close">CLOSE</button>
+      <button class="checkOut">Check Out</button>
+    </div>
+  </div>
+
+  
+  <div id="popup-notification" class="popup hidden">
+    <div class="popup-content">
+      <p>Product has been added to the cart!</p>
+      <button id="confirm-btn">OK</button>
+    </div>
+  </div>
+
+  
+  <div id="checkout-modal" class="popup hidden">
+    <div class="popup-content">
+      <h2>Checkout</h2>
+      <p>Note: Requires either 50% downpayment or 100% full payment before the store accepts your order</p>
+      <p>Scan QR code here: </p>
+      <span class="important">WAIT FOR OWNER RESPONSE BEFORE SENDING PAYMENT </span>
+      <img src="images/qrcode.JPG"></img>
+      <div id="cart-summary">
+        <!-- Product details and total price will be dynamically added here -->
+      </div>
+      <input type="hidden" id="cart-items" name="cart_items" value=""> <!-- Hidden input for cart items -->
+      <form action="https://api.web3forms.com/submit" method="POST" id="checkout-form">
+        <input type="hidden" name="access_key" value="1173dc62-d80a-489f-b626-2fb4ff413d14">
+
+        <label for="order" id="order-label">Order:</label>
+        <textarea id="order-list" name="order-list" readonly rows="5" style="width: 100%; resize: none;" required></textarea>
+
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required />
+
+        <label for="contact-number">Contact Number:</label>
+        <input type="tel" id="contact-number" name="contact-number" placeholder="Enter your contact number" required />
+
+        <label for="email">Email Account:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email account" required />
+
+        <label for="fb-account">Facebook Account:</label>
+        <input type="text" id="facebook" name="facebook" placeholder="Enter your Facebook account username" required />
+        
+        <div class="form-buttons">
+          <button type="button" id="cancel-checkout">Cancel</button>
+          <button type="submit" id="confirm-checkout">Confirm</button> <!-- Initially disabled -->
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-section">
+      <a href="https://www.facebook.com/profile.php?id=100092364414281" target="_blank" class="footer-facebook-link">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#ffffff">
+          <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.41c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54v1.85h2.74l-.44 2.89h-2.3v6.99C18.34 21.12 22 16.99 22 12z"/>
+        </svg>
+        Facebook
+      </a>
+      <p class="footer-email">Email: mommyyoonashop@gmail.com</p>
+      <p class="footer-location">Location: 1207 B. Quiricada Street, Tondo, Manila</p>
+      <p class="footer-copyright">©Copyright. All Rights Reserved</p>
+    </div>
+  </footer>
+</body>
+</html>
